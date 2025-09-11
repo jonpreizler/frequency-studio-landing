@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Studio - Transform Your Consciousness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at 20% 80%, #0a0a0a 0%, #1a1a2e 40%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(103, 58, 183, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 20% 70%, rgba(0, 255, 153, 0.1) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            background: linear-gradient(45deg, #00bfff, #00ff99, #673ab7, #00bfff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: gradientShift 4s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.4)); }
+            to { filter: drop-shadow(0 0 40px rgba(0, 255, 153, 0.6)); }
+        }
+
+        .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-container {
+            margin-top: 50px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00bfff, #00ff99);
+            color: #000;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.5);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(103, 58, 183, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00bfff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card p {
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .frequencies-showcase {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 80px 20px;
+            margin: 100px 0;
+            position: relative;
+        }
+
+        .frequencies-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 80%, rgba(0, 255, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(103, 58, 183, 0.1) 0%, transparent 50%);
+        }
+
+        .frequencies-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .frequencies-showcase h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00ff99, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .frequency-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .frequency-item {
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.1), rgba(0, 191, 255, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 153, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .frequency-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 153, 0.2);
+        }
+
+        .frequency-hz {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #00ff99;
+            margin-bottom: 10px;
+        }
+
+        .special-features {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .summon-preset {
+            background: linear-gradient(135deg, rgba(103, 58, 183, 0.2), rgba(0, 191, 255, 0.1));
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            border: 2px solid rgba(103, 58, 183, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summon-preset::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(103, 58, 183, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .summon-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .summon-preset h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #673ab7;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 46, 0.9));
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00bfff, #00ff99);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-preview {
+            max-width: 300px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .phone-mockup {
+            background: linear-gradient(135deg, #333, #666);
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .screen {
+            background: radial-gradient(circle, #1a1a2e, #0a0a0a);
+            border-radius: 20px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frequency-visualization {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #00bfff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .frequency-visualization::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #00ff99;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite reverse;
+        }
+
+        .frequency-visualization::after {
+            content: '528Hz';
+            color: #00ff99;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 191, 255, 0.5);
+            border-radius: 50%;
+            animation: floatUp 8s linear infinite;
+        }
+
+        .floating-dot:nth-child(2n) {
+            background: rgba(0, 255, 153, 0.5);
+            animation-duration: 6s;
+        }
+
+        .floating-dot:nth-child(3n) {
+            background: rgba(103, 58, 183, 0.5);
+            animation-duration: 10s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .features-grid {
+                margin: 50px auto;
+            }
+            .feature-card {
+                padding: 30px;
+            }
+            .frequencies-showcase {
+                padding: 50px 20px;
+            }
+            .summon-preset {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Frequency Studio</h1>
+            <p class="tagline">Transform Your Consciousness with Ancient Solfeggio Frequencies</p>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
+                Experience the power of sacred sound frequencies for healing, meditation, and spiritual awakening
+            </p>
+            
+            <div class="app-preview">
+                <div class="phone-mockup">
+                    <div class="screen">
+                        <div class="frequency-visualization"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="#" class="download-btn">📱 Download Free on Google Play</a>
+                <p style="margin-top: 20px; opacity: 0.7;">Available now • No ads • Full access to all frequencies</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🎵</div>
+            <h3>10 Sacred Frequencies</h3>
+            <p>Complete collection of Solfeggio frequencies from 174Hz to 963Hz, each precisely calibrated for specific healing and spiritual purposes.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎛️</div>
+            <h3>Advanced Audio Control</h3>
+            <p>Professional-grade sliders, seamless loops, and intelligent mixing. Create complex harmonic combinations with precision volume control.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Presets</h3>
+            <p>Pre-configured combinations for specific goals plus 3 programmable presets. Save your perfect frequency blends for instant access.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🧘</div>
+            <h3>Meditation Enhanced</h3>
+            <p>Designed for deep meditation, consciousness expansion, and spiritual practice. Visual feedback system keeps you focused on your inner journey.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🌟</div>
+            <h3>DNA Repair & Healing</h3>
+            <p>Access the famous 528Hz "Miracle Tone" and other healing frequencies scientifically studied for cellular repair and regeneration.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔮</div>
+            <h3>ESP & Intuition</h3>
+            <p>432Hz frequency specifically calibrated for enhancing extrasensory perception, telepathy, and clairvoyant abilities.</p>
+        </div>
+    </section>
+
+    <section class="frequencies-showcase">
+        <div class="frequencies-content">
+            <h2>The Sacred Frequencies</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto;">
+                Each frequency in Frequency Studio targets specific aspects of mind, body, and spirit. 
+                Based on ancient knowledge and modern research.
+            </p>
+            
+            <div class="frequency-highlights">
+                <div class="frequency-item">
+                    <div class="frequency-hz">396 Hz</div>
+                    <p>Liberation from fear and guilt</p>
+                </div>
+                <div class="frequency-item">
+                    <div class="frequency-hz">528 Hz</div>
+                    <p>DNA repair "Miracle" frequency</p>
+                </div>
+                <div class="frequency-item">
+                    <div class="frequency-hz">741 Hz</div>
+                    <p>Awakening intuition</p>
+                </div>
+                <div class="frequency-item">
+                    <div class="frequency-hz">963 Hz</div>
+                    <p>Divine consciousness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="special-features">
+        <div class="summon-preset">
+            <div class="summon-content">
+                <h3>🛸 "SUMMON" Preset</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 25px;">
+                    Experience our most powerful preset: a locked combination of 396Hz, 432Hz, and 963Hz 
+                    designed for advanced consciousness expansion and potential interdimensional contact.
+                </p>
+                <p style="opacity: 0.8;">
+                    ⚠️ Experimental feature for experienced practitioners
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>Ready to Transform Your Reality?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Join thousands of users who have discovered the life-changing power of Solfeggio frequencies. 
+            Your journey to higher consciousness starts with a single download.
+        </p>
+        
+        <a href="#" class="download-btn" style="font-size: 1.3rem; padding: 25px 50px;">
+            🚀 Start Your Journey - Download Now
+        </a>
+        
+        <div style="margin-top: 40px; opacity: 0.7;">
+            <p>✓ 100% Free Access ✓ No Subscription Required ✓ Offline Capable</p>
+            <p>✓ High-Quality Audio ✓ No Ads ✓ Regular Updates</p>
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #00bfff; margin-bottom: 20px;">Need Support?</h3>
+            <p style="opacity: 0.8; margin-bottom: 15px;">Questions about frequencies, technical issues, or want to share your experience?</p>
+            <p style="font-size: 1.1rem;">
+                <strong>Contact:</strong> 
+                <a href="mailto:frequency.mixer@gmail.com" style="color: #00ff99; text-decoration: none;">
+                    Chakra Khan - frequency.mixer@gmail.com
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Create floating particles
+        function createFloatingDot() {
+            const dot = document.createElement('div');
+            dot.className = 'floating-dot';
+            dot.style.left = Math.random() * 100 + '%';
+            dot.style.animationDelay = Math.random() * 8 + 's';
+            document.getElementById('floatingElements').appendChild(dot);
+            
+            setTimeout(() => {
+                dot.remove();
+            }, 10000);
+        }
+
+        // Generate floating dots periodically
+        setInterval(createFloatingDot, 800);
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.3;
+            hero.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add click handlers for download buttons (replace with actual Google Play URLs)
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Replace with actual Google Play Store URL
+                window.open('https://play.google.com/store/apps/details?id=your.app.package', '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
