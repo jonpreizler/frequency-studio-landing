@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Frequency Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .app-name {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .policy-content {
+            background: rgba(247, 249, 252, 0.8);
+            border-radius: 15px;
+            padding: 35px;
+            border-left: 4px solid #667eea;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .policy-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .key-points {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .key-points h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .point-icon {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .point-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            position: relative;
+        }
+        
+        .footer-icon::after {
+            content: '🛡️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .policy-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <div class="app-name">Frequency Studio</div>
+        </div>
+        
+        <div class="policy-content">
+            <div class="policy-text">
+                <span class="highlight">Frequency Studio</span> is an <span class="highlight">offline-only application</span> that prioritizes your privacy. The app does not collect, store, or transmit any personal data. It does not track user activity, and there is no advertising, in-app purchases, or requests for donations. 
+                
+                <br><br>
+                
+                All app functionalities are processed locally on your device, and since no information is ever sent to us or any other party, there is no personal data to be shared or sold. The app contains no adult content, is suitable for all ages, and will never ask you for money or personal information.
+            </div>
+            
+            <div class="key-points">
+                <h3>Key Privacy Features:</h3>
+                <div class="point">
+                    <div class="point-icon"></div>
+                    <div>No data collection or storage</div>
+                </div>
+                <div class="point">
+                    <div class="point-icon"></div>
+                    <div>No user activity tracking</div>
+                </div>
+                <div class="point">
+                    <div class="point-icon"></div>
+                    <div>No advertising or in-app purchases</div>
+                </div>
+                <div class="point">
+                    <div class="point-icon"></div>
+                    <div>All processing happens locally on your device</div>
+                </div>
+                <div class="point">
+                    <div class="point-icon"></div>
+                    <div>Suitable for all ages</div>
+                </div>
+                <div class="point">
+                    <div class="point-icon"></div>
+                    <div>Never requests money or personal information</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-icon"></div>
+            <div>Your privacy is our priority. This policy reflects our commitment to keeping your data completely private and secure.</div>
+        </div>
+    </div>
+</body>
+</html>
