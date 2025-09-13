@@ -62,7 +62,7 @@ Frequency Studio is an Android application featuring:
 ## 📞 Contact
 
 **Developer**: Chakra Khan  
-**Email**: frequency.mixer@gmail.com
+**Email**: chakra.khan.info@gmail.com
 
 ---
 
