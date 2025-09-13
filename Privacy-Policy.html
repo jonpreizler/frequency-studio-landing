@@ -4,214 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Frequency Studio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: 
-                radial-gradient(circle at 30% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(34, 139, 34, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            color: #e8e8e8;
-            line-height: 1.7;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 60px 0;
-            background: 
-                radial-gradient(ellipse at center, rgba(34, 139, 34, 0.05) 0%, transparent 70%),
-                radial-gradient(ellipse at 20% 80%, rgba(139, 69, 19, 0.03) 0%, transparent 60%);
-            margin-bottom: 40px;
-            border-radius: 25px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            background: linear-gradient(45deg, #8B4513, #228B22, #DAA520, #8B4513);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            animation: gradientShift 6s ease-in-out infinite, gentleGlow 4s ease-in-out infinite alternate;
-            font-weight: 300;
-            letter-spacing: -1px;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes gentleGlow {
-            from { filter: drop-shadow(0 0 15px rgba(34, 139, 34, 0.3)); }
-            to { filter: drop-shadow(0 0 25px rgba(139, 69, 19, 0.4)); }
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            color: #D2B48C;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .back-button {
-            display: block;
-            background: linear-gradient(135deg, #4a4a4a, #5a5a5a);
-            color: #e8e8e8;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 300;
-            margin: 0 auto 30px auto;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: fit-content;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(135deg, #5a5a5a, #6a6a6a);
-        }
-        
-        .back-button::before {
-            content: '← ';
-            margin-right: 8px;
-        }
-
-        .section {
-            background: rgba(139, 69, 19, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(139, 69, 19, 0.15);
-            transition: all 0.4s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
-        }
-
-        .section h2 {
-            color: #DAA520;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
-            font-weight: 400;
-        }
-
-        .section h3 {
-            color: #D2B48C;
-            font-size: 1.3rem;
-            margin: 25px 0 15px 0;
-            font-weight: 400;
-        }
-
-        .section p {
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .section ul, .section ol {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .section li {
-            margin: 8px 0;
-            opacity: 0.9;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(34, 139, 34, 0.1));
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(139, 69, 19, 0.3);
-            margin: 20px 0;
-        }
-
-        .highlight h4 {
-            color: #DAA520;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
-        .contact-info {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(34, 139, 34, 0.1));
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(139, 69, 19, 0.3);
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .contact-info h3 {
-            color: #DAA520;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        .contact-info a {
-            color: #DAA520;
-            text-decoration: none;
-            font-weight: 400;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .last-updated {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .container { padding: 10px; }
-            .section { padding: 20px; }
-            .hero { padding: 40px 20px; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">
     <div class="container">
-        <a href="index.html" class="back-button">Back to Home</a>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" class="back-button">Back to Home</a>
+        </div>
         
-        <div class="hero">
-            <h1>Privacy Policy</h1>
-            <p>Your privacy and data protection are our top priorities</p>
+        <div class="hero" style="min-height: auto; padding: 40px 0; text-align: center;">
+            <div class="hero-content" style="max-width: none;">
+                <h1 style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 200;">Privacy Policy</h1>
+                <p class="tagline" style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Your privacy and data protection are our top priorities</p>
+            </div>
         </div>
 
         <div class="section">
-            <h2>📱 Frequency Studio Privacy Policy</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">📱 Frequency Studio Privacy Policy</h2>
             <p>This Privacy Policy describes how Frequency Studio ("we", "our", or "us") collects, uses, and protects your information when you use our mobile application.</p>
             
             <div class="highlight">
@@ -221,7 +30,7 @@
         </div>
 
         <div class="section">
-            <h2>📊 Information We Collect</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">📊 Information We Collect</h2>
             
             <h3>Personal Information</h3>
             <p>Frequency Studio is designed with privacy in mind. We collect minimal personal information:</p>
@@ -242,7 +51,7 @@
         </div>
 
         <div class="section">
-            <h2>🎯 How We Use Your Information</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">🎯 How We Use Your Information</h2>
             
             <h3>App Functionality</h3>
             <ul>
@@ -260,7 +69,7 @@
         </div>
 
         <div class="section">
-            <h2>🔐 Data Security & Storage</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">🔐 Data Security & Storage</h2>
             
             <h3>Local Storage</h3>
             <p>All your personal data (presets, settings) is stored locally on your device using Android's secure storage mechanisms. We do not transmit this data to external servers.</p>
@@ -275,7 +84,7 @@
         </div>
 
         <div class="section">
-            <h2>📱 Third-Party Services</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">📱 Third-Party Services</h2>
             
             <h3>Google Play Services</h3>
             <p>Frequency Studio may use Google Play Services for:</p>
@@ -290,7 +99,7 @@
         </div>
 
         <div class="section">
-            <h2>👤 Your Rights & Choices</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">👤 Your Rights & Choices</h2>
             
             <h3>Data Control</h3>
             <ul>
@@ -308,7 +117,7 @@
         </div>
 
         <div class="section">
-            <h2>🔄 Policy Updates</h2>
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">🔄 Policy Updates</h2>
             <p>We may update this Privacy Policy from time to time. Changes will be posted in the app and on our website. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
             
             <div class="highlight">
@@ -318,15 +127,15 @@
         </div>
 
         <div class="contact-info">
-            <h3>📧 Contact Us</h3>
+            <h3 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">📧 Contact Us</h3>
             <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
             <p><strong>Email:</strong> <a href="mailto:frequency.mixer@gmail.com">frequency.mixer@gmail.com</a></p>
             <p><strong>Developer:</strong> Chakra Khan</p>
         </div>
 
-        <div class="last-updated">
-            <p><strong>Frequency Studio</strong> - Transform Your Consciousness with Sacred Frequencies</p>
-            <p>Privacy Policy • Last Updated: September 2025</p>
+        <div class="footer">
+            <p style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;"><strong>Frequency Studio</strong> - Transform Your Consciousness with Sacred Frequencies</p>
+            <p style="opacity: 0.7; margin-top: 10px; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Privacy Policy • Last Updated: September 2025</p>
         </div>
     </div>
 </body>
