@@ -10,265 +10,303 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at 20% 80%, #0a0a0a 0%, #1a1a2e 40%, #16213e 100%);
+            color: #ffffff;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
             min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            animation: slideUp 0.8s ease-out;
-        }
-        
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .header {
+
+        .hero {
             text-align: center;
+            padding: 60px 0;
+            background: radial-gradient(circle at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
             margin-bottom: 40px;
-            position: relative;
+            border-radius: 20px;
         }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-        
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(45deg, #00bfff, #00ff99, #673ab7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite alternate;
         }
-        
-        .app-name {
-            font-size: 1.2em;
-            color: #666;
-            font-weight: 400;
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.3)); }
+            to { filter: drop-shadow(0 0 20px rgba(0, 255, 153, 0.5)); }
         }
-        
-        .policy-content {
-            background: rgba(247, 249, 252, 0.8);
-            border-radius: 15px;
-            padding: 35px;
-            border-left: 4px solid #667eea;
-            position: relative;
-            overflow: hidden;
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        
-        .policy-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .policy-text {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #444;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 3px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        .key-points {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(102, 126, 234, 0.2);
-        }
-        
-        .key-points h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        
-        .point {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-        
-        .point-icon {
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            margin-right: 12px;
-            margin-top: 2px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .point-icon::after {
-            content: '✓';
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(102, 126, 234, 0.2);
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .footer-icon {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            position: relative;
-        }
-        
-        .footer-icon::after {
-            content: '🛡️';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 16px;
-        }
-        
+
         .back-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
+            display: block;
+            background: linear-gradient(45deg, #00bfff, #00ff99);
+            color: #000;
             padding: 12px 24px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin: 0 auto 30px auto;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+            text-align: center;
+            width: fit-content;
         }
         
         .back-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
         }
         
         .back-button::before {
             content: '← ';
             margin-right: 8px;
         }
-        
+
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            color: #00bfff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
+        }
+
+        .section h3 {
+            color: #00ff99;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .section ul, .section ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin: 8px 0;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(0, 255, 153, 0.1));
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            margin: 20px 0;
+        }
+
+        .highlight h4 {
+            color: #00bfff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(0, 191, 255, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(103, 58, 183, 0.3);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-info h3 {
+            color: #673ab7;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #00ff99;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-                margin: 10px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .policy-content {
-                padding: 25px;
-            }
+            .container { padding: 10px; }
+            .section { padding: 20px; }
+            .hero { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <a href="index.html" class="back-button">Back to Home</a>
+        <a href="index.html" class="back-button">Back to Home</a>
+        
+        <div class="hero">
             <h1>Privacy Policy</h1>
-            <div class="app-name">Frequency Studio</div>
+            <p>Your privacy and data protection are our top priorities</p>
         </div>
-        
-        <div class="policy-content">
-            <div class="policy-text">
-                <span class="highlight">Frequency Studio</span> is an <span class="highlight">offline-only application</span> that prioritizes your privacy. The app does not collect, store, or transmit any personal data. It does not track user activity, and there is no advertising, in-app purchases, or requests for donations. 
-                
-                <br><br>
-                
-                All app functionalities are processed locally on your device, and since no information is ever sent to us or any other party, there is no personal data to be shared or sold. The app contains no adult content, is suitable for all ages, and will never ask you for money or personal information.
-            </div>
+
+        <div class="section">
+            <h2>📱 Frequency Studio Privacy Policy</h2>
+            <p>This Privacy Policy describes how Frequency Studio ("we", "our", or "us") collects, uses, and protects your information when you use our mobile application.</p>
             
-            <div class="key-points">
-                <h3>Key Privacy Features:</h3>
-                <div class="point">
-                    <div class="point-icon"></div>
-                    <div>No data collection or storage</div>
-                </div>
-                <div class="point">
-                    <div class="point-icon"></div>
-                    <div>No user activity tracking</div>
-                </div>
-                <div class="point">
-                    <div class="point-icon"></div>
-                    <div>No advertising or in-app purchases</div>
-                </div>
-                <div class="point">
-                    <div class="point-icon"></div>
-                    <div>All processing happens locally on your device</div>
-                </div>
-                <div class="point">
-                    <div class="point-icon"></div>
-                    <div>Suitable for all ages</div>
-                </div>
-                <div class="point">
-                    <div class="point-icon"></div>
-                    <div>Never requests money or personal information</div>
-                </div>
+            <div class="highlight">
+                <h4>🔒 Key Privacy Principles</h4>
+                <p>We are committed to protecting your privacy and ensuring your personal data is handled responsibly and transparently.</p>
             </div>
         </div>
-        
-        <div class="footer">
-            <div class="footer-icon"></div>
-            <div>Your privacy is our priority. This policy reflects our commitment to keeping your data completely private and secure.</div>
+
+        <div class="section">
+            <h2>📊 Information We Collect</h2>
+            
+            <h3>Personal Information</h3>
+            <p>Frequency Studio is designed with privacy in mind. We collect minimal personal information:</p>
+            <ul>
+                <li><strong>App Usage Data:</strong> Basic analytics to improve app performance and user experience</li>
+                <li><strong>Device Information:</strong> Device type, operating system version for compatibility</li>
+                <li><strong>Preset Data:</strong> Your custom frequency presets stored locally on your device</li>
+            </ul>
+
+            <h3>What We DON'T Collect</h3>
+            <ul>
+                <li>❌ Personal identification information (name, email, phone)</li>
+                <li>❌ Location data or GPS information</li>
+                <li>❌ Audio recordings or microphone access</li>
+                <li>❌ Contact lists or personal files</li>
+                <li>❌ Browsing history or web activity</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎯 How We Use Your Information</h2>
+            
+            <h3>App Functionality</h3>
+            <ul>
+                <li>Store your custom frequency presets locally on your device</li>
+                <li>Provide smooth audio playback and frequency mixing</li>
+                <li>Maintain app settings and preferences</li>
+            </ul>
+
+            <h3>Analytics & Improvement</h3>
+            <ul>
+                <li>Anonymous usage statistics to improve app performance</li>
+                <li>Crash reports to fix bugs and enhance stability</li>
+                <li>Feature usage data to guide future development</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔐 Data Security & Storage</h2>
+            
+            <h3>Local Storage</h3>
+            <p>All your personal data (presets, settings) is stored locally on your device using Android's secure storage mechanisms. We do not transmit this data to external servers.</p>
+
+            <h3>Security Measures</h3>
+            <ul>
+                <li>Data encryption using Android's built-in security features</li>
+                <li>No external data transmission of personal information</li>
+                <li>Regular security updates and patches</li>
+                <li>Minimal data collection principle</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📱 Third-Party Services</h2>
+            
+            <h3>Google Play Services</h3>
+            <p>Frequency Studio may use Google Play Services for:</p>
+            <ul>
+                <li>App distribution and updates</li>
+                <li>Anonymous crash reporting (if enabled)</li>
+                <li>Basic analytics (anonymized)</li>
+            </ul>
+
+            <h3>No Third-Party Data Sharing</h3>
+            <p>We do not sell, trade, or share your personal information with third parties for marketing purposes.</p>
+        </div>
+
+        <div class="section">
+            <h2>👤 Your Rights & Choices</h2>
+            
+            <h3>Data Control</h3>
+            <ul>
+                <li><strong>Delete Data:</strong> Uninstall the app to remove all local data</li>
+                <li><strong>Reset Presets:</strong> Clear custom presets through app settings</li>
+                <li><strong>Disable Analytics:</strong> Turn off analytics in device settings</li>
+            </ul>
+
+            <h3>Privacy Controls</h3>
+            <ul>
+                <li>All data is stored locally - you have full control</li>
+                <li>No account required - use anonymously</li>
+                <li>No data synchronization with external servers</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔄 Policy Updates</h2>
+            <p>We may update this Privacy Policy from time to time. Changes will be posted in the app and on our website. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+            
+            <div class="highlight">
+                <h4>📅 Last Updated</h4>
+                <p>This Privacy Policy was last updated on December 2024.</p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>📧 Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:frequency.mixer@gmail.com">frequency.mixer@gmail.com</a></p>
+            <p><strong>Developer:</strong> Chakra Khan</p>
+        </div>
+
+        <div class="last-updated">
+            <p><strong>Frequency Studio</strong> - Transform Your Consciousness with Sacred Frequencies</p>
+            <p>Privacy Policy • Last Updated: December 2024</p>
         </div>
     </div>
-    
 </body>
 </html>
