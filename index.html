@@ -13,9 +13,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at 20% 80%, #0a0a0a 0%, #1a1a2e 40%, #16213e 100%);
-            color: #ffffff;
-            line-height: 1.6;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(34, 139, 34, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: #e8e8e8;
+            line-height: 1.7;
             overflow-x: hidden;
             min-height: 100vh;
         }
@@ -27,7 +30,9 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+            background: 
+                radial-gradient(ellipse at center, rgba(34, 139, 34, 0.05) 0%, transparent 70%),
+                radial-gradient(ellipse at 20% 80%, rgba(139, 69, 19, 0.03) 0%, transparent 60%);
         }
 
         .hero::before {
@@ -37,15 +42,21 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(103, 58, 183, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 20% 70%, rgba(0, 255, 153, 0.1) 0%, transparent 50%);
-            animation: float 6s ease-in-out infinite;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(34, 139, 34, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 20% 70%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+            animation: breathe 8s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1) translateY(0px);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.02) translateY(-10px);
+                opacity: 0.6;
+            }
         }
 
         .hero-content {
@@ -57,14 +68,14 @@
 
         .hero h1 {
             font-size: clamp(3rem, 8vw, 6rem);
-            background: linear-gradient(45deg, #00bfff, #00ff99, #673ab7, #00bfff);
+            background: linear-gradient(45deg, #8B4513, #228B22, #DAA520, #8B4513);
             background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 20px;
-            animation: gradientShift 4s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
-            font-weight: 800;
+            animation: gradientShift 6s ease-in-out infinite, gentleGlow 4s ease-in-out infinite alternate;
+            font-weight: 300;
             letter-spacing: -2px;
         }
 
@@ -74,36 +85,38 @@
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.4)); }
-            to { filter: drop-shadow(0 0 40px rgba(0, 255, 153, 0.6)); }
+        @keyframes gentleGlow {
+            from { filter: drop-shadow(0 0 15px rgba(34, 139, 34, 0.3)); }
+            to { filter: drop-shadow(0 0 25px rgba(139, 69, 19, 0.4)); }
         }
 
         .tagline {
             font-size: clamp(1.2rem, 3vw, 1.8rem);
-            opacity: 0.9;
+            opacity: 0.8;
             margin-bottom: 40px;
             font-weight: 300;
+            color: #D2B48C;
         }
 
         .cta-container {
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .download-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #00bfff, #00ff99);
-            color: #000;
-            padding: 20px 40px;
-            border-radius: 50px;
+            background: linear-gradient(135deg, #4a4a4a, #5a5a5a);
+            color: #e8e8e8;
+            padding: 18px 35px;
+            border-radius: 40px;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.1rem;
+            font-weight: 300;
             margin: 0 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .download-btn::before {
@@ -122,8 +135,9 @@
         }
 
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #5a5a5a, #6a6a6a);
         }
 
         .features-grid {
@@ -131,18 +145,18 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             max-width: 1200px;
-            margin: 100px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            background: rgba(139, 69, 19, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
             padding: 40px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -154,9 +168,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(103, 58, 183, 0.1));
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.1), rgba(139, 69, 19, 0.1));
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
         }
 
         .feature-card:hover::before {
@@ -164,8 +178,8 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
         }
 
         .feature-icon {
@@ -179,21 +193,26 @@
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: #00bfff;
+            color: #DAA520;
+            font-weight: 400;
             position: relative;
             z-index: 2;
         }
 
         .feature-card p {
-            opacity: 0.9;
+            opacity: 0.8;
+            color: #D2B48C;
             position: relative;
             z-index: 2;
         }
 
         .frequencies-showcase {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 80px 20px;
-            margin: 100px 0;
+            background: rgba(139, 69, 19, 0.05);
+            padding: 60px 20px;
+            margin: 60px 0;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 69, 19, 0.1);
             position: relative;
         }
 
@@ -455,37 +474,37 @@
 
     <section class="features-grid">
         <div class="feature-card">
-            <div class="feature-icon">🎵</div>
+            <div class="feature-icon">ॐ</div>
             <h3>10 Sacred Frequencies</h3>
             <p>Complete collection of Solfeggio frequencies from 174Hz to 963Hz, each precisely calibrated for specific healing and spiritual purposes.</p>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🎛️</div>
+            <div class="feature-icon">◊</div>
             <h3>Advanced Audio Control</h3>
             <p>Professional-grade sliders, seamless loops, and intelligent mixing. Create complex harmonic combinations with precision volume control.</p>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">⚡</div>
+            <div class="feature-icon">☸</div>
             <h3>Instant Presets</h3>
             <p>Pre-configured combinations for specific goals plus 3 programmable presets. Save your perfect frequency blends for instant access.</p>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🧘</div>
+            <div class="feature-icon">🕉️</div>
             <h3>Meditation Enhanced</h3>
             <p>Designed for deep meditation, consciousness expansion, and spiritual practice. Visual feedback system keeps you focused on your inner journey.</p>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🌟</div>
+            <div class="feature-icon">✧</div>
             <h3>DNA Repair & Healing</h3>
             <p>Access the famous 528Hz "Miracle Tone" and other healing frequencies scientifically studied for cellular repair and regeneration.</p>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🔮</div>
+            <div class="feature-icon">◯</div>
             <h3>ESP & Intuition</h3>
             <p>432Hz frequency specifically calibrated for enhancing extrasensory perception, telepathy, and clairvoyant abilities.</p>
         </div>
@@ -536,34 +555,19 @@
     </section>
 
     <section class="final-cta">
-        <h2>Ready to Transform Your Reality?</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Join thousands of users who have discovered the life-changing power of Solfeggio frequencies. 
-            Your journey to higher consciousness starts with a single download.
-        </p>
-        
-        <a href="#" class="download-btn" style="font-size: 1.3rem; padding: 25px 50px;">
-            🚀 Start Your Journey - Download Now
-        </a>
-        
-        <div style="margin-top: 40px; opacity: 0.7;">
-            <p>✓ 100% Free Access ✓ No Subscription Required ✓ Offline Capable</p>
-            <p>✓ High-Quality Audio ✓ No Ads ✓ Regular Updates</p>
-        </div>
-
         <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <h3 style="color: #00bfff; margin-bottom: 20px;">Need Support?</h3>
+            <h3 style="color: #DAA520; margin-bottom: 20px;">Need Support?</h3>
             <p style="opacity: 0.8; margin-bottom: 15px;">Questions about frequencies, technical issues, or want to share your experience?</p>
             <p style="font-size: 1.1rem;">
                 <strong>Contact:</strong> 
-                <a href="mailto:frequency.mixer@gmail.com" style="color: #00ff99; text-decoration: none;">
+                <a href="mailto:frequency.mixer@gmail.com" style="color: #DAA520; text-decoration: none;">
                     Chakra Khan - frequency.mixer@gmail.com
                 </a>
             </p>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
                 <p style="opacity: 0.7; margin-bottom: 10px;">Privacy & Legal</p>
-                <a href="Privacy-Policy.html" style="color: #00bfff; text-decoration: none; font-weight: 500;">
+                <a href="Privacy-Policy.html" style="color: #DAA520; text-decoration: none; font-weight: 500;">
                     📄 Privacy Policy
                 </a>
             </div>
