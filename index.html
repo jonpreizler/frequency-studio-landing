@@ -318,57 +318,18 @@
         }
 
         .phone-mockup {
-            background: linear-gradient(135deg, #333, #666);
+            background: transparent;
             border-radius: 30px;
-            padding: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
-        .screen {
-            background: radial-gradient(circle, #1a1a2e, #0a0a0a);
+        .phone-screenshot {
+            width: 100%;
+            height: auto;
             border-radius: 20px;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .frequency-visualization {
-            width: 200px;
-            height: 200px;
-            border: 3px solid #00bfff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .frequency-visualization::before {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border: 2px solid #00ff99;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite reverse;
-        }
-
-        .frequency-visualization::after {
-            content: '528Hz';
-            color: #00ff99;
-            font-size: 1.5rem;
-            font-weight: bold;
-            z-index: 2;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .floating-elements {
@@ -440,18 +401,24 @@
     <div class="floating-elements" id="floatingElements"></div>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Frequency Studio</h1>
-            <p class="tagline">Transform Your Consciousness with Ancient Solfeggio Frequencies</p>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
-                Experience the power of sacred sound frequencies for healing, meditation, and spiritual awakening
-            </p>
+            <div class="hero-content">
+                <h1>Frequency Studio</h1>
+                <p class="tagline">Transform Your Consciousness with Ancient Solfeggio Frequencies</p>
+                <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8;">
+                    Experience the power of sacred sound frequencies for healing, meditation, and spiritual awakening
+                </p>
+                
+                <div style="margin-bottom: 30px;">
+                    <a href="faq.html" style="color: #00bfff; text-decoration: none; font-weight: 500; border: 1px solid rgba(0, 191, 255, 0.3); padding: 8px 16px; border-radius: 20px; transition: all 0.3s ease;" 
+                       onmouseover="this.style.background='rgba(0, 191, 255, 0.1)'; this.style.borderColor='#00bfff';" 
+                       onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(0, 191, 255, 0.3)';">
+                        ❓ FAQ & Complete Guide
+                    </a>
+                </div>
             
             <div class="app-preview">
                 <div class="phone-mockup">
-                    <div class="screen">
-                        <div class="frequency-visualization"></div>
-                    </div>
+                    <img src="images/phone.png" alt="Frequency Studio App Screenshot" class="phone-screenshot">
                 </div>
             </div>
 
@@ -569,6 +536,13 @@
                     Chakra Khan - frequency.mixer@gmail.com
                 </a>
             </p>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="opacity: 0.7; margin-bottom: 10px;">Privacy & Legal</p>
+                <a href="Privacy-Policy.html" style="color: #00bfff; text-decoration: none; font-weight: 500;">
+                    📄 Privacy Policy
+                </a>
+            </div>
         </div>
     </section>
 
@@ -628,6 +602,7 @@
                 window.open('https://play.google.com/store/apps/details?id=your.app.package', '_blank');
             });
         });
+
     </script>
 </body>
 </html>

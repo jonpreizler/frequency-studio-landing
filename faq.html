@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Studio - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1A1A2E;
+            color: #ffffff;
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: radial-gradient(circle at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+            margin-bottom: 40px;
+            border-radius: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(45deg, #00bfff, #00ff99, #673ab7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.3)); }
+            to { filter: drop-shadow(0 0 20px rgba(0, 255, 153, 0.5)); }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .nav-menu h3 {
+            color: #00bfff;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-item {
+            background: rgba(103, 58, 183, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(103, 58, 183, 0.3);
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        .nav-item:hover {
+            background: rgba(103, 58, 183, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(103, 58, 183, 0.3);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            color: #00bfff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(45deg, #00bfff, #00ff99);
+        }
+
+        .section h3 {
+            color: #00ff99;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .frequency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .frequency {
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.1) 0%, rgba(103, 58, 183, 0.1) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00ff99;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frequency:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 255, 153, 0.2);
+        }
+
+        .frequency::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .frequency:hover::before {
+            left: 100%;
+        }
+
+        .frequency-hz {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #00ff99;
+            margin-bottom: 8px;
+        }
+
+        .frequency-desc {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .preset {
+            background: linear-gradient(135deg, rgba(103, 58, 183, 0.15) 0%, rgba(0, 191, 255, 0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #673ab7;
+            transition: all 0.3s ease;
+        }
+
+        .preset:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(103, 58, 183, 0.3);
+        }
+
+        .preset h4 {
+            color: #673ab7;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .tip {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+            padding: 20px 60px 20px 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            position: relative;
+        }
+
+        .tip::before {
+            content: '💡';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            z-index: 1;
+        }
+
+        .controls-visual {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .control-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .control-visual {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .control-blue { background: linear-gradient(45deg, #00bfff, #0066cc); }
+        .control-silver { background: linear-gradient(45deg, #c0c0c0, #808080); }
+        .control-red {
+            background: linear-gradient(45deg, #ff4444, #cc0000);
+            animation: pulse 1.5s infinite;
+        }
+        .control-yellow { background: linear-gradient(45deg, #ffdd44, #ffaa00); }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .steps {
+            counter-reset: step-counter;
+        }
+
+        .step {
+            counter-increment: step-counter;
+            background: rgba(0, 191, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #00bfff, #00ff99);
+            color: #000;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.1) 0%, rgba(244, 67, 54, 0.1) 100%);
+            border-left: 4px solid #ff5722;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning::before {
+            content: '⚠️';
+            margin-right: 10px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .color-green { color: #00ff99; }
+        .color-purple { color: #673ab7; }
+        .color-blue { color: #00bfff; }
+        .color-orange { color: #ff9800; }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .section { padding: 20px; }
+            .hero { padding: 40px 20px; }
+            .frequency-grid { grid-template-columns: 1fr; }
+            .nav-grid { grid-template-columns: 1fr; }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #00bfff, #00ff99);
+            color: #000;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #00bfff, #00ff99);
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+        }
+        
+        .back-button::before {
+            content: '← ';
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="back-button">Back to Home</a>
+    <div class="hero">
+        <h1>Frequency Studio</h1>
+        <p>Advanced Solfeggio Frequency Meditation & Consciousness Expansion Platform</p>
+    </div>
+
+    <div class="nav-menu">
+        <h3>Quick Navigation</h3>
+        <div class="nav-grid">
+            <a href="#about" class="nav-item">About</a>
+            <a href="#frequencies" class="nav-item">Frequencies</a>
+            <a href="#controls" class="nav-item">Controls</a>
+            <a href="#presets" class="nav-item">Presets</a>
+            <a href="#getting-started" class="nav-item">Getting Started</a>
+            <a href="#uap-contact" class="nav-item">UAP Contact</a>
+        </div>
+    </div>
+
+    <div class="section" id="about">
+        <h2>🌟 What is Frequency Studio?</h2>
+        <p>Frequency Studio is an advanced meditation and consciousness expansion platform featuring the ancient <strong>Solfeggio frequencies</strong>. These specific sound frequencies have been used for centuries to promote healing, spiritual growth, and elevated states of consciousness.</p>
+        
+        <div class="tip">
+            <strong>Platform Availability:</strong> Frequency Studio is currently only available for Android smartphones and tablets at this time.
+        </div>
+
+        <div class="tip">
+            <strong>Experimental Features:</strong> Beyond traditional meditation, Frequency Studio includes experimental capabilities for UAP (Unidentified Aerial Phenomena) contact and interdimensional communication. Approach these features with an open mind and proper safety protocols.
+        </div>
+    </div>
+
+    <div class="section" id="frequencies">
+        <h2>🎵 Solfeggio Frequencies</h2>
+        <p>Each frequency targets specific aspects of mind, body, and spirit. Use individually or combine for enhanced effects:</p>
+
+        <div class="frequency-grid">
+            <div class="frequency">
+                <div class="frequency-hz">174 Hz</div>
+                <div class="frequency-desc">Foundation of consciousness and grounding. Provides stability and security.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz">285 Hz</div>
+                <div class="frequency-desc">Physical healing frequency. Repairs tissues and organs at cellular level.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz color-green">396 Hz ⭐</div>
+                <div class="frequency-desc">Liberates guilt and fear. Cleanses emotional blockages and trauma.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz">417 Hz</div>
+                <div class="frequency-desc">Facilitates change and transformation. Breaks negative thought patterns.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz color-green">432 Hz ⭐</div>
+                <div class="frequency-desc">ESP, perception, telepathy, and clairvoyance enhancement frequency.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz color-green">528 Hz ⭐</div>
+                <div class="frequency-desc">The "Miracle" frequency. DNA repair and transformation.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz">639 Hz</div>
+                <div class="frequency-desc">Harmonizes relationships and promotes connection with others.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz">741 Hz</div>
+                <div class="frequency-desc">Awakens intuition and enhances spiritual awareness.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz">852 Hz</div>
+                <div class="frequency-desc">Returns consciousness to spiritual order and divine wisdom.</div>
+            </div>
+            <div class="frequency">
+                <div class="frequency-hz color-green">963 Hz ⭐</div>
+                <div class="frequency-desc">Divine consciousness and connection to higher self.</div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <strong>⭐ Spiritual Frequencies:</strong> Green-marked frequencies (396, 432, 528, 963 Hz) are specifically optimized for spiritual work and consciousness expansion.
+        </div>
+    </div>
+
+    <div class="section" id="controls">
+        <h2>🎛️ Mastering the Controls</h2>
+
+        <h3>Slider Operation</h3>
+        <ul>
+            <li><strong>Volume Control:</strong> Drag sliders horizontally (0-100%)</li>
+            <li><strong>Instant Mute:</strong> Tap the mute button (🔇/🔊) for quick silence</li>
+            <li><strong>Layering:</strong> Combine multiple frequencies for complex harmonic effects</li>
+            <li><strong>Gradual Adjustment:</strong> Start low and increase volume as comfortable</li>
+        </ul>
+
+        <h3>Visual Feedback System</h3>
+        <div class="controls-visual">
+            <div class="control-item">
+                <div class="control-visual control-blue">●</div>
+                <strong>Blue Ring</strong><br>
+                Active frequency with volume
+            </div>
+            <div class="control-item">
+                <div class="control-visual control-silver">●</div>
+                <strong>Silver Ring</strong><br>
+                Inactive frequency (no volume)
+            </div>
+            <div class="control-item">
+                <div class="control-visual control-red">●</div>
+                <strong>Red Center (Pulsing)</strong><br>
+                Audio actively playing
+            </div>
+            <div class="control-item">
+                <div class="control-visual control-yellow">●</div>
+                <strong>Yellow Center</strong><br>
+                Active but paused/muted
+            </div>
+        </div>
+
+        <h3>Master Controls</h3>
+        <div class="tip">
+            <ul>
+                <li><strong>🌍 Earth Element:</strong> Appears when audio system is running but silent (no active sliders)</li>
+                <li><strong>⏸️ Pause Button:</strong> Visible when frequencies are active - stops all audio</li>
+                <li><strong>▶️ Resume Button:</strong> Appears when paused - restarts audio playback</li>
+                <li><strong>Automatic Switching:</strong> Moving any slider instantly activates the pause/resume system</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="presets">
+        <h2>🎯 Preset Combinations</h2>
+
+        <div class="preset">
+            <h4><span class="color-green">🔒 "SUMMON" Preset</span> - UAP Contact & Spiritual Transformation</h4>
+            <p><strong>Locked Configuration:</strong></p>
+            <ul>
+                <li><strong class="color-green">396 Hz</strong> - Clears fear and guilt barriers</li>
+                <li><strong class="color-green">432 Hz</strong> - Enhances ESP and telepathic abilities</li>
+                <li><strong class="color-green">963 Hz</strong> - Opens divine consciousness channels</li>
+            </ul>
+            <div class="warning">
+                This preset cannot be modified and is specifically calibrated for consciousness expansion and potential UAP contact.
+            </div>
+        </div>
+
+        <div class="preset">
+            <h4><span class="color-purple">⚙️ Preset "1"</span> - User Programmable</h4>
+            <ul>
+                <li><strong>Long Press:</strong> Save current slider configuration</li>
+                <li><strong>Short Press:</strong> Load saved configuration</li>
+                <li><strong>Long Press (existing):</strong> Overwrite with new settings</li>
+            </ul>
+        </div>
+
+        <div class="preset">
+            <h4><span class="color-orange">⚙️ Preset "2"</span> - User Programmable</h4>
+            <ul>
+                <li>Identical functionality to Preset 1</li>
+                <li>Allows for multiple saved configurations</li>
+            </ul>
+        </div>
+
+        <div class="preset">
+            <h4><span class="color-blue">⚙️ Preset "3"</span> - User Programmable</h4>
+            <ul>
+                <li>Third user-definable preset slot</li>
+                <li>Perfect for creating specialized frequency combinations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="getting-started">
+        <h2>🚀 Getting Started Guide</h2>
+
+        <div class="steps">
+            <div class="step">
+                <strong>Choose Your Approach:</strong> Select a preset for guided experience or create custom combinations using individual sliders.
+            </div>
+            <div class="step">
+                <strong>Understand the Earth Element:</strong> When no sliders are active, you'll see the Earth symbol - the audio system is ready but silent.
+            </div>
+            <div class="step">
+                <strong>Activate Frequencies:</strong> Move any slider to activate the frequency system and reveal the pause/resume controls.
+            </div>
+            <div class="step">
+                <strong>Fine-Tune Your Mix:</strong> Adjust individual slider volumes to create your perfect harmonic blend.
+            </div>
+            <div class="step">
+                <strong>Begin Your Session:</strong> Find a comfortable position and meditate for 5-15 minutes (or longer as desired).
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎧 Optimization Tips</h2>
+        <ul>
+            <li><strong>Audio Setup:</strong> Use quality headphones for optimal frequency resolution</li>
+            <li><strong>Environment:</strong> Choose a quiet, comfortable space free from distractions</li>
+            <li><strong>Posture:</strong> Sit or lie down with eyes closed for deeper immersion</li>
+            <li><strong>Breathing:</strong> Focus on slow, deep breathing while listening</li>
+            <li><strong>Experimentation:</strong> Try different frequency combinations to find what resonates</li>
+            <li><strong>Intuition:</strong> Trust your inner guidance - use what feels right for your current needs</li>
+            <li><strong>Duration:</strong> Start with shorter sessions and gradually increase as comfortable</li>
+        </ul>
+    </div>
+
+    <div class="section" id="uap-contact">
+        <h2>🛸 Experimental UAP Contact Protocol (Advanced)</h2>
+
+        <div class="warning">
+            <strong>Experimental Feature:</strong> These protocols are for research purposes and should be approached with proper safety considerations and realistic expectations.
+        </div>
+
+        <h3>Contact Preparation</h3>
+        <ul>
+            <li><strong>Location:</strong> Use outdoors in open areas with clear sky visibility</li>
+            <li><strong>Timing:</strong> Best results reported during twilight hours or clear nights</li>
+            <li><strong>Mindset:</strong> Maintain respectful, open, and non-fearful intention</li>
+            <li><strong>Duration:</strong> Allow 20-45 minutes for potential contact sessions</li>
+        </ul>
+
+        <h3>Recommended Frequencies for Contact</h3>
+        <ul>
+            <li><strong>Use the "SUMMON" preset</strong> as your primary configuration</li>
+            <li><strong>Alternative:</strong> Program Preset 1 with 432 Hz + 528 Hz + 963 Hz</li>
+            <li><strong>Advanced:</strong> Experiment with adding 741 Hz for enhanced intuitive reception</li>
+        </ul>
+
+        <h3>Safety & Documentation</h3>
+        <ul>
+            <li>Always inform someone of your location and planned duration</li>
+            <li>Carry standard safety equipment (flashlight, communication device)</li>
+            <li>Document experiences in a journal for research purposes</li>
+            <li>Follow all local regulations and respect private property</li>
+            <li>Maintain critical thinking alongside open-minded exploration</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Technical Specifications</h2>
+        <ul>
+            <li><strong>Audio Quality:</strong> High-fidelity 5-minute seamless loops per frequency</li>
+            <li><strong>Transition System:</strong> Smooth fade technology prevents audio gaps and clicks</li>
+            <li><strong>Volume Precision:</strong> Fine-grain control allows precise frequency mixing</li>
+            <li><strong>Resource Management:</strong> Automatic audio resource optimization for device performance</li>
+            <li><strong>Compatibility:</strong> Dedicated audio files for each of the 10 Solfeggio frequencies</li>
+            <li><strong>Platform:</strong> Optimized for mobile and desktop meditation environments</li>
+            <li><strong>Offline Operation:</strong> No internet connection required - all audio files are embedded locally</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p><strong>Frequency Studio</strong> - Exploring the intersection of ancient wisdom and consciousness technology</p>
+        <p style="opacity: 0.7; margin-top: 10px;">Remember: Your journey with these frequencies is unique. Trust your experience and use what serves your highest good.</p>
+    </div>
+</div>
+
+<button class="scroll-top" id="scrollTop">↑</button>
+
+<script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Add subtle parallax effect to hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        const rate = scrolled * -0.5;
+        hero.style.transform = `translateY(${rate}px)`;
+    });
+   </script>
+</body>
+</html>

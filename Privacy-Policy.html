@@ -31,6 +31,7 @@
             animation: slideUp 0.8s ease-out;
         }
         
+        
         @keyframes slideUp {
             from {
                 opacity: 0;
@@ -178,6 +179,29 @@
             font-size: 16px;
         }
         
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button::before {
+            content: '← ';
+            margin-right: 8px;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 25px;
@@ -197,6 +221,7 @@
 <body>
     <div class="container">
         <div class="header">
+            <a href="index.html" class="back-button">Back to Home</a>
             <h1>Privacy Policy</h1>
             <div class="app-name">Frequency Studio</div>
         </div>
@@ -244,5 +269,6 @@
             <div>Your privacy is our priority. This policy reflects our commitment to keeping your data completely private and secure.</div>
         </div>
     </div>
+    
 </body>
 </html>
