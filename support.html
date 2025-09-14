@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Feedback - Frequency Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" style="color: #DAA520; text-decoration: none; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 1.8rem;"
+               onclick="fadeOutAndNavigate('index.html'); return false;">← Back to Home</a>
+        </div>
+        
+        <div class="hero" style="min-height: auto; padding: 40px 0; text-align: center;">
+            <div class="hero-content" style="max-width: none;">
+                <h1 style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 200;">Help Shape the Future of Frequency Studio</h1>
+                <p style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Your voice matters! As we continue to evolve and improve your experience, we'd love to hear from you.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">We Want to Know:</h2>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li style="margin-bottom: 15px;">What features do you love most?</li>
+                <li style="margin-bottom: 15px;">What could work better for you?</li>
+                <li style="margin-bottom: 15px;">What new functionality would make your life easier?</li>
+                <li style="margin-bottom: 15px;">Any bugs or glitches you've encountered?</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Quick Ways to Share Feedback:</h2>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li style="margin-bottom: 15px;"><strong>Rate & Review</strong> - Drop us a review on Google Play (it takes just 30 seconds!)</li>
+                <li style="margin-bottom: 15px;"><strong>In-App Feedback</strong> - Use the feedback button in Settings to send us quick thoughts</li>
+                <li style="margin-bottom: 15px;"><strong>Detailed Suggestions</strong> - Email us directly with ideas, screenshots, or detailed feedback</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                Your insights help us prioritize updates and create features that truly matter to you. Every piece of feedback is read by our development team and helps make the app better for everyone.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 style="text-align: center !important; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Get in Touch:</h2>
+            <div style="text-align: center;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                    📧 <strong>Email:</strong> 
+                    <a href="mailto:chakra.khan.info@gmail.com" style="color: #9370DB; text-decoration: none; font-weight: 500;" onclick="window.location.href='mailto:chakra.khan.info@gmail.com'; return false;">chakra.khan.info@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">
+                Thank you for being part of our community and helping us build something amazing together!
+            </p>
+            <p style="text-align: center; font-size: 1rem; opacity: 0.8;">
+                Love the app? Consider sharing it with friends who might find it useful too!
+            </p>
+        </div>
+
+        <div class="footer">
+            <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <h3 style="color: #DAA520; margin-bottom: 20px; text-align: center; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Need Support?</h3>
+                <p style="opacity: 0.8; margin-bottom: 15px; text-align: center;">Questions about frequencies, technical issues, or want to share your experience?</p>
+                <p style="font-size: 1.1rem; text-align: center;">
+                    <strong>Contact:</strong> 
+                    Chakra Khan at <a href="mailto:chakra.khan.info@gmail.com" style="color: #9370DB; text-decoration: none; font-weight: 500;" onclick="window.location.href='mailto:chakra.khan.info@gmail.com'; return false;">chakra.khan.info@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Fade transition function
+    function fadeOutAndNavigate(url) {
+        document.body.style.transition = 'opacity 0.5s ease-out';
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            window.location.href = url;
+        }, 500);
+    }
+
+    // Fade in on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease-in';
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+</script>
+</body>
+</html>
