@@ -20,8 +20,12 @@ This is the official landing page for **Frequency Studio**, an Android applicati
 - `index.html` - Main landing page
 - `faq.html` - Comprehensive FAQ and help guide  
 - `Privacy-Policy.html` - Privacy policy and data practices
+- `support.html` - User feedback and support page
+- `styles.css` - Global stylesheet for consistent theming
 - `images/phone.png` - App screenshot mockup
 - `images/rotating_earth.gif` - Animated Earth overlay
+- `images/woman meditating_2.jpg` - Meditation hero image
+- `images/GetItOnGooglePlay_Badge_Web_color.png` - Official Google Play badge
 - `README.md` - This file
 
 ## 🚀 Live Site
@@ -47,11 +51,12 @@ Frequency Studio is an Android application featuring:
 
 ## 🎯 Key Sections
 
-1. **Hero Section**: Animated title with rotating Earth phone mockup
+1. **Hero Section**: Animated title with rotating Earth phone mockup and meditation image
 2. **Features Grid**: 6 feature cards highlighting app capabilities
 3. **Frequency Showcase**: Sacred frequencies explanation
 4. **Special Features**: "SUMMON" preset and advanced features
-5. **Download CTA**: Call-to-action with app store links
+5. **Download CTA**: Official Google Play badge with meditation image
+6. **Support Page**: User feedback collection and contact information
 
 ## 🔧 Setup
 
