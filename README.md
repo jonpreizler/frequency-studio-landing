@@ -20,7 +20,7 @@ This is the official landing page for **Frequency Studio**, an Android applicati
 - `index.html` - Main landing page
 - `faq.html` - Comprehensive FAQ and help guide  
 - `Privacy-Policy.html` - Privacy policy and data practices
-- `support.html` - User feedback and support page
+- `feedback.html` - User feedback and support page
 - `styles.css` - Global stylesheet for consistent theming
 - `images/phone.png` - App screenshot mockup
 - `images/rotating_earth.gif` - Animated Earth overlay

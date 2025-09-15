@@ -13,7 +13,7 @@ frequency-studio-landing/
 ├── index.html              # Main landing page
 ├── faq.html               # FAQ and complete guide
 ├── Privacy-Policy.html     # Privacy policy page
-├── support.html           # User feedback and support page
+├── feedback.html           # User feedback and support page
 ├── styles.css             # Global stylesheet
 ├── README.md              # Project documentation
 ├── TECHNICAL_REFERENCE.md # This document
@@ -30,7 +30,7 @@ frequency-studio-landing/
 **Date**: January 2025
 **Changes**:
 - ✅ Created comprehensive FAQ page (faq.html) with complete user guide
-- ✅ Created support page (support.html) for user feedback collection
+- ✅ Created support page (feedback.html) for user feedback collection
 - ✅ Implemented global CSS stylesheet (styles.css) for consistent theming
 - ✅ Updated all pages to use consistent dark neon theme with gold accents
 - ✅ Added meditation hero image with 3D shadow effects
@@ -107,7 +107,7 @@ frequency-studio-landing/
 - **Typography**: Clean, readable fonts with proper hierarchy
 - **Accessibility**: High contrast ratios and semantic HTML
 
-### Support Page (support.html)
+### Support Page (feedback.html)
 - **Theme**: Consistent with site theme
 - **Purpose**: User feedback collection and contact
 - **Features**: Feedback forms, contact information, support links
@@ -141,7 +141,7 @@ frequency-studio-landing/
 ### Global Navigation System
 - `fadeOutAndNavigate()` - Smooth page transitions with fade effects
 - `DOMContentLoaded` - Page load fade-in animations
-- Consistent across all pages (index.html, faq.html, Privacy-Policy.html, support.html)
+- Consistent across all pages (index.html, faq.html, Privacy-Policy.html, feedback.html)
 
 ### Landing Page Scripts
 - `createFloatingDot()` - Generates animated particles
