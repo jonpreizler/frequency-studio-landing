@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">
-<div class="container">
+    <div class="floating-elements" id="floatingElements"></div>
+    <div class="container">
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="index.html" style="color: #DAA520; text-decoration: none; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 1.8rem;"
            onclick="fadeOutAndNavigate('index.html'); return false;">← Back to Home</a>
@@ -281,6 +282,10 @@
     </div>
 </div>
 
+<div style="text-align: center; margin-top: 30px; padding-bottom: 40px;">
+    <img src="images/copyright_logo.jpg" alt="Copyright" style="max-width: 150px; width: 100%; height: auto; opacity: 0.6; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+</div>
+
 <button class="scroll-top" id="scrollTop">↑</button>
 
 <script>
@@ -301,6 +306,22 @@
             document.body.style.opacity = '1';
         }, 100);
     });
+
+    // Create floating particles
+    function createFloatingDot() {
+        const dot = document.createElement('div');
+        dot.className = 'floating-dot';
+        dot.style.left = Math.random() * 100 + '%';
+        dot.style.animationDelay = Math.random() * 8 + 's';
+        document.getElementById('floatingElements').appendChild(dot);
+        
+        setTimeout(() => {
+            dot.remove();
+        }, 10000);
+    }
+
+    // Generate floating dots periodically
+    setInterval(createFloatingDot, 800);
 
     // Smooth scrolling for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
