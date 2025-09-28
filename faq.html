@@ -10,8 +10,12 @@
     <div class="floating-elements" id="floatingElements"></div>
     <div class="container">
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="index.html" style="color: #DAA520; text-decoration: none; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 1.8rem;"
-           onclick="fadeOutAndNavigate('index.html'); return false;">← Back to Home</a>
+        <a href="index.html" style="color: #DAA520; text-decoration: none; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 1.8rem; display: inline-block; padding: 8px 12px; border-radius: 8px; transition: all 0.3s ease;"
+           onmouseover="this.style.background='rgba(218, 165, 32, 0.1)'; this.style.transform='scale(1.05)';" 
+           onmouseout="this.style.background='transparent'; this.style.transform='scale(1)';"
+           onclick="fadeOutAndNavigate('index.html'); return false;">
+            🏠
+        </a>
     </div>
     <div class="hero" style="min-height: auto; padding: 20px 0; text-align: center;">
         <div class="hero-content" style="max-width: none;">
