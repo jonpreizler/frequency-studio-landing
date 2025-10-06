@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form - Frequency Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #DAA520;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #DAA520;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group select {
+            cursor: pointer;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .rating-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .rating-emoji {
+            font-size: 2.5rem;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+            padding: 5px;
+        }
+        
+        .rating-emoji:hover {
+            opacity: 0.8;
+            transform: scale(1.2);
+        }
+        
+        .rating-emoji.selected {
+            opacity: 1;
+            transform: scale(1.3);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .required {
+            color: #ff6b6b;
+        }
+        
+        .form-note {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        #successMessage {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: rgba(147, 112, 219, 0.2);
+            border: 2px solid #9370DB;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        #successMessage h2 {
+            color: #9370DB;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">
+    <div class="floating-elements" id="floatingElements"></div>
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" style="color: #DAA520; text-decoration: none; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 1.8rem; display: inline-block; padding: 8px 12px; border-radius: 8px; transition: all 0.3s ease;"
+               onmouseover="this.style.background='rgba(218, 165, 32, 0.1)'; this.style.transform='scale(1.05)';" 
+               onmouseout="this.style.background='transparent'; this.style.transform='scale(1)';"
+               onclick="fadeOutAndNavigate('index.html'); return false;">
+                🏠
+            </a>
+        </div>
+        
+        <div class="hero" style="min-height: auto; padding: 40px 0; text-align: center;">
+            <div class="hero-content" style="max-width: none;">
+                <h1 style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 200;">Share Your Feedback</h1>
+                <p style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300;">Help us improve Frequency Studio with your insights</p>
+            </div>
+        </div>
+
+        <div id="successMessage">
+            <h2>Thank You! 🙏</h2>
+            <p>Your feedback has been received. We truly appreciate you taking the time to help us improve Frequency Studio.</p>
+        </div>
+
+        <div class="feedback-form">
+            <form id="feedbackForm" action="https://formspree.io/f/mrbyloqg" method="POST">
+                <div class="form-group">
+                    <label for="name">Name (optional)</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email (optional)</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                    <div class="form-note" style="text-align: left; margin-top: 5px; font-size: 0.85rem;">
+                        Only if you'd like a response
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackType">Feedback Type <span class="required">*</span></label>
+                    <select id="feedbackType" name="feedbackType" required>
+                        <option value="">Select type...</option>
+                        <option value="Bug Report">🐛 Bug Report</option>
+                        <option value="Feature Request">💡 Feature Request</option>
+                        <option value="General Feedback">💬 General Feedback</option>
+                        <option value="Frequency Request">🎵 Frequency Request</option>
+                        <option value="Other">📋 Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="text-align: center;">
+                    <label>How would you rate your experience?</label>
+                    <div class="rating-group">
+                        <span class="rating-emoji" data-rating="1" title="Poor">😞</span>
+                        <span class="rating-emoji" data-rating="2" title="Fair">😐</span>
+                        <span class="rating-emoji" data-rating="3" title="Good">🙂</span>
+                        <span class="rating-emoji" data-rating="4" title="Very Good">😊</span>
+                        <span class="rating-emoji" data-rating="5" title="Excellent">🤩</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Feedback <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Share your thoughts, ideas, or issues..." required></textarea>
+                </div>
+
+                <div class="form-group" style="text-align: center;">
+                    <button type="submit" class="submit-btn">Send Feedback</button>
+                </div>
+
+                <div class="form-note">
+                    We read every submission and deeply value your input 💜
+                </div>
+            </form>
+        </div>
+
+        <div style="text-align: center; margin: 60px 0 40px 0;">
+            <p style="font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                <a href="privacy-policy.html" style="color: #9370DB; text-decoration: none;" 
+                   onclick="fadeOutAndNavigate('privacy-policy.html'); return false;">Privacy Policy</a>
+            </p>
+            <img src="images/copyright_logo.jpg" alt="Frequency Studio" style="max-width: 150px; opacity: 0.6; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); margin-top: 20px;">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in';
+                document.body.style.opacity = '1';
+            }, 10);
+        });
+
+        function fadeOutAndNavigate(url) {
+            document.body.style.transition = 'opacity 0.3s ease-out';
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = url;
+            }, 300);
+        }
+
+        const ratingEmojis = document.querySelectorAll('.rating-emoji');
+        const ratingInput = document.getElementById('rating');
+        
+        ratingEmojis.forEach(emoji => {
+            emoji.addEventListener('click', function() {
+                ratingEmojis.forEach(e => e.classList.remove('selected'));
+                this.classList.add('selected');
+                ratingInput.value = this.getAttribute('data-rating');
+            });
+        });
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('feedbackForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    setTimeout(() => {
+                        fadeOutAndNavigate('index.html');
+                    }, 3000);
+                } else {
+                    alert('Oops! There was a problem submitting your form. Please try emailing us directly at chakra.khan.info@gmail.com');
+                }
+            })
+            .catch(error => {
+                alert('Oops! There was a problem submitting your form. Please try emailing us directly at chakra.khan.info@gmail.com');
+            });
+        });
+
+        function createFloatingElement() {
+            const element = document.createElement('div');
+            element.className = 'particle';
+            element.style.cssText = `
+                position: fixed;
+                width: ${Math.random() * 8 + 4}px;
+                height: ${Math.random() * 8 + 4}px;
+                background: radial-gradient(circle, rgba(147, 112, 219, 0.8), rgba(147, 112, 219, 0.2));
+                border-radius: 50%;
+                left: ${Math.random() * 100}vw;
+                bottom: -20px;
+                pointer-events: none;
+                animation: float ${Math.random() * 10 + 15}s linear infinite;
+                opacity: ${Math.random() * 0.5 + 0.3};
+                box-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
+            `;
+            
+            document.getElementById('floatingElements').appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 25000);
+        }
+
+        setInterval(createFloatingElement, 800);
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
