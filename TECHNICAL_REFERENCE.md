@@ -12,15 +12,19 @@
 frequency-studio-landing/
 ├── index.html              # Main landing page
 ├── faq.html               # FAQ and complete guide
-├── Privacy-Policy.html     # Privacy policy page
-├── feedback.html           # User feedback and support page
+├── privacy-policy.html     # Privacy policy page
+├── feedback-form.html      # User feedback and support page
 ├── styles.css             # Global stylesheet
+├── sitemap.xml            # XML sitemap for Google Search Console
+├── robots.txt             # Search engine crawler directives
+├── CNAME                  # Custom domain configuration
 ├── README.md              # Project documentation
 ├── TECHNICAL_REFERENCE.md # This document
 └── images/
     ├── phone.png          # App screenshot
     ├── rotating_earth.gif # Animated Earth overlay
     ├── woman meditating_2.jpg # Meditation hero image
+    ├── copyright_logo.jpg # Copyright logo
     └── GetItOnGooglePlay_Badge_Web_color.png # Official Google Play badge
 ```
 
@@ -30,7 +34,7 @@ frequency-studio-landing/
 **Date**: January 2025
 **Changes**:
 - ✅ Created comprehensive FAQ page (faq.html) with complete user guide
-- ✅ Created support page (feedback.html) for user feedback collection
+- ✅ Created support page (feedback-form.html) for user feedback collection
 - ✅ Implemented global CSS stylesheet (styles.css) for consistent theming
 - ✅ Updated all pages to use consistent dark neon theme with gold accents
 - ✅ Added meditation hero image with 3D shadow effects
@@ -43,6 +47,9 @@ frequency-studio-landing/
 - ✅ Removed "Sacred Frequencies" section from main page
 - ✅ Updated tagline to "solfeggio frequency mixer"
 - ✅ Added binaural effect usage instructions
+- ✅ Created XML sitemap (sitemap.xml) for Google Search Console indexing
+- ✅ Created robots.txt for search engine crawler directives
+- ✅ Updated site name to "Tibetan Bowls Solfeggio Studio"
 
 **Technical Implementation**:
 - CSS: Global stylesheet with consistent color scheme (#DAA520 gold, #9370DB purple)
@@ -165,6 +172,36 @@ frequency-studio-landing/
 - **JavaScript**: Event delegation and efficient DOM manipulation
 - **Loading**: Minimal external dependencies
 
+## SEO & Search Engine Optimization
+
+### Sitemap (sitemap.xml)
+- **Purpose**: XML sitemap for Google Search Console indexing
+- **Location**: Root directory (`/sitemap.xml`)
+- **Content**: Lists all pages with priorities and change frequencies
+- **Pages Included**:
+  - Homepage (priority 1.0, weekly updates)
+  - FAQ page (priority 0.8, monthly updates)
+  - Feedback form (priority 0.7, monthly updates)
+  - Privacy Policy (priority 0.5, yearly updates)
+- **Submission**: Submitted to Google Search Console
+- **Reference**: Linked in `index.html` `<head>` section
+
+### Robots.txt
+- **Purpose**: Search engine crawler directives
+- **Location**: Root directory (`/robots.txt`)
+- **Configuration**: Allows all crawlers, points to sitemap
+- **Content**: 
+  ```
+  User-agent: *
+  Allow: /
+  Sitemap: https://chakra-khan.org/sitemap.xml
+  ```
+
+### Google Search Console Integration
+- **Sitemap URL**: `https://chakra-khan.org/sitemap.xml`
+- **Status**: Successfully submitted and validated
+- **Custom Domain**: `chakra-khan.org` configured via CNAME file
+
 ## Future Enhancements
 - [x] Add Google Analytics integration
 - [x] Implement Google Play Store link with official badge
@@ -172,6 +209,8 @@ frequency-studio-landing/
 - [x] Create additional pages (FAQ, About, Support)
 - [x] Add contact form
 - [x] Implement SEO optimizations
+- [x] Create XML sitemap for Google Search Console
+- [x] Create robots.txt for search engine directives
 - [ ] Add Android tablet detection for portrait mode
 - [ ] Implement user feedback collection system
 - [ ] Add more meditation images
@@ -184,6 +223,9 @@ frequency-studio-landing/
 - **Navigation**: Fade transitions work reliably across all browsers
 - **Content updates**: Update FAQ and support pages as app features evolve
 - **Legal compliance**: Review privacy policy annually for legal accuracy
+- **SEO**: Update `sitemap.xml` when adding new pages or changing page priorities
+- **Sitemap dates**: Update `<lastmod>` dates in sitemap.xml when pages are modified
+- **Search Console**: Monitor Google Search Console for indexing status and errors
 
 ## Contact Information
 - **Developer**: Chakra Khan

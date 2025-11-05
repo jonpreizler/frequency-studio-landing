@@ -19,9 +19,11 @@ This is the official landing page for **Frequency Studio**, an Android applicati
 
 - `index.html` - Main landing page
 - `faq.html` - Comprehensive FAQ and help guide  
-- `Privacy-Policy.html` - Privacy policy and data practices
-- `feedback.html` - User feedback and support page
+- `privacy-policy.html` - Privacy policy and data practices
+- `feedback-form.html` - User feedback and support page
 - `styles.css` - Global stylesheet for consistent theming
+- `sitemap.xml` - XML sitemap for Google Search Console indexing
+- `robots.txt` - Search engine crawler directives
 - `images/phone.png` - App screenshot mockup
 - `images/rotating_earth.gif` - Animated Earth overlay
 - `images/woman meditating_2.jpg` - Meditation hero image
@@ -32,12 +34,18 @@ This is the official landing page for **Frequency Studio**, an Android applicati
 
 Visit: **[chakra-khan.org](https://chakra-khan.org)**
 
+**SEO & Search Engine Indexing:**
+- Sitemap: [sitemap.xml](https://chakra-khan.org/sitemap.xml)
+- Robots.txt: [robots.txt](https://chakra-khan.org/robots.txt)
+- Submitted to Google Search Console for indexing
+
 ## 🛠️ Technologies
 
 - HTML5
 - CSS3 (Grid, Flexbox, Animations)
 - JavaScript (Interactive elements)
 - Responsive Design
+- XML Sitemap (Google Search Console integration)
 
 ## 📱 About Frequency Studio App
 
