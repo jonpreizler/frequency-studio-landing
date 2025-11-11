@@ -1,10 +1,10 @@
 # Tibetan Bowls Solfeggio Studio Landing Page
 
-A stunning, responsive landing page for the Tibetan Bowls Solfeggio Studio app—showcasing the power of solfeggio frequencies, canonical Tibetan bowl presets, and meditation guidance.
+A stunning, responsive support and landing site for the Tibetan Bowls Solfeggio Studio Android app—showcasing the power of solfeggio frequencies, canonical Tibetan bowl presets, meditation guidance, and user assistance resources.
 
 ## 🌟 Overview
 
-This is the official landing page for **Tibetan Bowls Solfeggio Studio**, an Android application that provides a sophisticated solfeggio frequency mixer for meditation, healing, and spiritual practice. The landing page features an immersive dark theme with neon accents and showcases the app's capabilities through interactive demonstrations.
+This is the official support and landing page for **Tibetan Bowls Solfeggio Studio**, an Android application that provides a sophisticated solfeggio frequency mixer for meditation, healing, and spiritual practice. The site features an immersive dark theme with neon accents, a feedback channel for users, and showcases the app's capabilities through interactive demonstrations.
 
 ## 🎨 Design Features
 
