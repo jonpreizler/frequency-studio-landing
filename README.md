@@ -66,7 +66,7 @@ Tibetan Bowls Solfeggio Studio is an Android application featuring:
 - **10 Sacred Frequencies**: Complete Solfeggio frequency collection (174Hz - 963Hz)
 - **Advanced Audio Control**: Professional-grade sliders and seamless loops
 - **Custom Presets**: Save and load your favorite frequency combinations
-- **Meditation Enhanced**: Designed for deep meditation and consciousness expansion
+- **Meditation Enhanced**: Designed for deep meditation and restorative balance
 - **Offline Capable**: No internet required, all audio files stored locally
 
 ## 🎯 Key Sections
@@ -91,4 +91,4 @@ Tibetan Bowls Solfeggio Studio is an Android application featuring:
 
 ---
 
-Transform Your Consciousness with Sacred Frequencies 🌌✨
+Nurture Your Meditation Practice with Sacred Frequencies 🌌✨
