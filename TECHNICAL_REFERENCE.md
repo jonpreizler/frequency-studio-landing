@@ -31,10 +31,13 @@ frequency-studio-landing/
 ├── TECHNICAL_REFERENCE.md # This document
 └── images/
     ├── phone.png          # App screenshot
+    ├── phone.webp         # Optimized app screenshot (WebP)
     ├── rotating_earth.gif # Animated Earth overlay
     ├── woman meditating_2.jpg # Meditation hero image
+    ├── woman-meditating_2.webp # Optimized meditation hero image (WebP)
     ├── copyright_logo.jpg # Copyright logo
-    └── GetItOnGooglePlay_Badge_Web_color.png # Official Google Play badge
+    ├── GetItOnGooglePlay_Badge_Web_color.png # Official Google Play badge
+    └── get-it-on-google-play.webp # Optimized Google Play badge (WebP)
 ```
 
 ## Change Log
@@ -59,6 +62,7 @@ frequency-studio-landing/
 - ✅ Created XML sitemap (sitemap.xml) for Google Search Console indexing
 - ✅ Created robots.txt for search engine crawler directives
 - ✅ Updated site name to "Tibetan Bowls Solfeggio Studio"
+- ✅ Added SoftwareApplication schema and WebP image delivery
 
 **Technical Implementation**:
 - CSS: Global stylesheet with consistent color scheme (#DAA520 gold, #9370DB purple)
@@ -105,6 +109,7 @@ frequency-studio-landing/
 - **Theme**: Dark neon with gold (#DAA520) and purple (#9370DB) accents
 - **Background**: Radial gradient with cosmic aesthetics
 - **Hero Image**: Meditation image with 3D shadow effects (layered box-shadow)
+- **Media Delivery**: `<picture>` tags serve WebP imagery with lazy loading and PNG/JPG fallbacks
 - **Animations**: Floating particles, gradient text shifts, fade transitions
 - **Responsive**: Mobile-first design with CSS Grid and Flexbox
 - **Performance**: Optimized animations with CSS transforms
@@ -113,7 +118,7 @@ frequency-studio-landing/
 ### FAQ Page (faq.html)
 - **Theme**: Consistent with main site (dark neon with gold accents)
 - **Content**: Comprehensive user guide and troubleshooting
-- **Navigation**: Centered back button with fade transitions
+- **Navigation**: Centered back button with fade transitions and contextual internal links
 - **Structure**: Organized sections with centered headers
 
 ### Privacy Policy Page (Privacy-Policy.html)
@@ -212,6 +217,7 @@ frequency-studio-landing/
 - **Custom Domain**: `chakra-khan.org` configured via CNAME file
 - **Structured Data**:
   - `WebSite` + `Organization` JSON-LD on homepage
+  - `SoftwareApplication` JSON-LD on homepage
   - `FAQPage` schema on FAQ page
   - `Article` schema on privacy policy page
   - `ContactPage` schema on feedback form
@@ -247,6 +253,8 @@ frequency-studio-landing/
 - **SEO**: Update `sitemap.xml` when adding new pages or changing page priorities
 - **Sitemap dates**: Update `<lastmod>` dates in sitemap.xml when pages are modified
 - **Search Console**: Monitor Google Search Console for indexing status and errors
+- **Core Web Vitals**: Run Google Lighthouse audits (mobile + desktop) after major UI/image changes
+- **Structured Data Checks**: Validate JSON-LD (Organization, WebSite, SoftwareApplication, FAQPage, Article, ContactPage) via Google’s Rich Results Test when schema updates occur
 
 ## Contact Information
 - **Developer**: Chakra Khan

@@ -27,7 +27,10 @@ This is the official landing page for **Tibetan Bowls Solfeggio Studio**, an And
 - `images/phone.png` - App screenshot mockup
 - `images/rotating_earth.gif` - Animated Earth overlay
 - `images/woman meditating_2.jpg` - Meditation hero image
+- `images/woman-meditating_2.webp` - Optimized WebP meditation hero image
 - `images/GetItOnGooglePlay_Badge_Web_color.png` - Official Google Play badge
+- `images/get-it-on-google-play.webp` - Optimized Google Play badge (WebP)
+- `images/phone.webp` - Optimized app screenshot (WebP)
 - `README.md` - This file
 
 ## 🚀 Live Site
@@ -38,6 +41,8 @@ Visit: **[chakra-khan.org](https://chakra-khan.org)**
 - Sitemap: [sitemap.xml](https://chakra-khan.org/sitemap.xml)
 - Robots.txt: [robots.txt](https://chakra-khan.org/robots.txt)
 - JSON-LD structured data for homepage, FAQ, privacy policy, and feedback form
+- SoftwareApplication schema for Play Store listing
+- Modern WebP image delivery with lazy loading
 - Submitted to Google Search Console for indexing
 
 ## 🛠️ Technologies
@@ -48,6 +53,8 @@ Visit: **[chakra-khan.org](https://chakra-khan.org)**
 - Responsive Design
 - XML Sitemap (Google Search Console integration)
 - JSON-LD structured data (Organization, FAQ, Article, ContactPage)
+- Schema.org SoftwareApplication markup
+- WebP image pipeline with lazy-loading delivery
 
 ## 🧭 Business Requirements
 
@@ -58,6 +65,7 @@ Visit: **[chakra-khan.org](https://chakra-khan.org)**
 - Maintain transparent privacy, security, and data practices.
 - Support SEO discoverability (sitemap, robots, canonical tags, structured data).
 - Enforce HTTPS and SEO-friendly canonical URLs.
+- Provide direct access to support resources and feedback collection.
 
 ## 📱 About the Mobile App
 
@@ -77,6 +85,14 @@ Tibetan Bowls Solfeggio Studio is an Android application featuring:
 4. **Special Features**: Advanced presets and meditation workflows
 5. **Download CTA**: Official Google Play badge with meditation image
 6. **Support Page**: User feedback collection and contact information
+7. **Internal Links**: Contextual links to FAQ sections and support form
+
+## 📈 Ongoing SEO Monitoring
+
+- Run Google Lighthouse (mobile) after major updates to watch Core Web Vitals.
+- Re-submit `sitemap.xml` in Google Search Console when URLs or priorities change.
+- Verify structured data (Organization, WebSite, SoftwareApplication, FAQ, Article, ContactPage) using Google’s Rich Results Test.
+- Monitor Search Console enhancement reports for FAQ and breadcrumb coverage.
 
 ## 🔧 Setup
 
