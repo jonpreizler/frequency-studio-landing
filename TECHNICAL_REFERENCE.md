@@ -1,11 +1,20 @@
-# Frequency Studio Landing Page - Technical Reference
+# Tibetan Bowls Solfeggio Studio Landing Page - Technical Reference
 
 ## Project Overview
-- **Project Name**: Frequency Studio Landing Page
-- **Purpose**: Marketing website for Frequency Studio Android app
+- **Project Name**: Tibetan Bowls Solfeggio Studio Landing Page
+- **Purpose**: Marketing website for the Tibetan Bowls Solfeggio Studio Android app
 - **Technology Stack**: HTML5, CSS3, JavaScript (Vanilla)
 - **Local Path**: `C:\Users\jon\frequency-studio-landing`
 - **GitHub Repository**: https://github.com/jonpreizler/frequency-studio-landing
+
+## Business Requirements
+- Present the Tibetan Bowls Solfeggio Studio value proposition and solfeggio toolkit.
+- Deliver quick access to FAQ, feedback, and privacy policy resources.
+- Support Google Play distribution with official branding and CTA.
+- Collect user feedback through a Formspree-powered contact form.
+- Provide transparent privacy and data usage documentation.
+- Maintain comprehensive SEO signals: sitemap, robots.txt, canonical tags, structured data.
+- Force HTTPS usage and eliminate duplicate indexing.
 
 ## File Structure
 ```
@@ -208,6 +217,11 @@ frequency-studio-landing/
   - `ContactPage` schema on feedback form
   - Social sharing metadata (Open Graph + Twitter cards) on all pages
 
+### Canonical URLs & HTTPS
+- **Canonical Tags**: Each page declares its canonical HTTPS URL.
+- **HTTP Redirect**: Lightweight script forces all URLs to HTTPS to avoid duplicate indexing.
+- **Custom Domain**: Managed through `CNAME` and GitHub Pages with enforced HTTPS.
+
 ## Future Enhancements
 - [x] Add Google Analytics integration
 - [x] Implement Google Play Store link with official badge
@@ -217,6 +231,7 @@ frequency-studio-landing/
 - [x] Implement SEO optimizations
 - [x] Create XML sitemap for Google Search Console
 - [x] Create robots.txt for search engine directives
+- [x] Add canonical URLs and HTTPS redirection
 - [ ] Add Android tablet detection for portrait mode
 - [ ] Implement user feedback collection system
 - [ ] Add more meditation images
@@ -236,7 +251,7 @@ frequency-studio-landing/
 ## Contact Information
 - **Developer**: Chakra Khan
 - **Email**: chakra.khan.info@gmail.com
-- **Project**: Frequency Studio Landing Page
+- **Project**: Tibetan Bowls Solfeggio Studio Landing Page
 
 ---
 *Last Updated: January 2025*

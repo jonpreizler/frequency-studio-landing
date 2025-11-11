@@ -1,10 +1,10 @@
-# Frequency Studio Landing Page
+# Tibetan Bowls Solfeggio Studio Landing Page
 
-A stunning, responsive landing page for the Frequency Studio Android app - showcasing the power of Solfeggio frequencies for meditation and consciousness expansion.
+A stunning, responsive landing page for the Tibetan Bowls Solfeggio Studio app—showcasing the power of solfeggio frequencies, canonical Tibetan bowl presets, and meditation guidance.
 
 ## 🌟 Overview
 
-This is the official landing page for **Frequency Studio**, an Android application that provides a sophisticated Solfeggio frequency mixer for meditation, healing, and spiritual practice. The landing page features an immersive dark theme with neon accents and showcases the app's capabilities through interactive demonstrations.
+This is the official landing page for **Tibetan Bowls Solfeggio Studio**, an Android application that provides a sophisticated solfeggio frequency mixer for meditation, healing, and spiritual practice. The landing page features an immersive dark theme with neon accents and showcases the app's capabilities through interactive demonstrations.
 
 ## 🎨 Design Features
 
@@ -49,9 +49,19 @@ Visit: **[chakra-khan.org](https://chakra-khan.org)**
 - XML Sitemap (Google Search Console integration)
 - JSON-LD structured data (Organization, FAQ, Article, ContactPage)
 
-## 📱 About Frequency Studio App
+## 🧭 Business Requirements
 
-Frequency Studio is an Android application featuring:
+- Present a clear overview of Tibetan Bowls Solfeggio Studio and its solfeggio frequency tools.
+- Provide immediate access to key resources (FAQ, feedback form, privacy policy).
+- Offer a trusted Google Play download link with official branding.
+- Collect structured user feedback via Formspree.
+- Maintain transparent privacy, security, and data practices.
+- Support SEO discoverability (sitemap, robots, canonical tags, structured data).
+- Enforce HTTPS and SEO-friendly canonical URLs.
+
+## 📱 About the Mobile App
+
+Tibetan Bowls Solfeggio Studio is an Android application featuring:
 
 - **10 Sacred Frequencies**: Complete Solfeggio frequency collection (174Hz - 963Hz)
 - **Advanced Audio Control**: Professional-grade sliders and seamless loops
