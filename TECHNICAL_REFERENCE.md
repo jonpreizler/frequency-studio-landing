@@ -201,6 +201,12 @@ frequency-studio-landing/
 - **Sitemap URL**: `https://chakra-khan.org/sitemap.xml`
 - **Status**: Successfully submitted and validated
 - **Custom Domain**: `chakra-khan.org` configured via CNAME file
+- **Structured Data**:
+  - `WebSite` + `Organization` JSON-LD on homepage
+  - `FAQPage` schema on FAQ page
+  - `Article` schema on privacy policy page
+  - `ContactPage` schema on feedback form
+  - Social sharing metadata (Open Graph + Twitter cards) on all pages
 
 ## Future Enhancements
 - [x] Add Google Analytics integration

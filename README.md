@@ -37,6 +37,7 @@ Visit: **[chakra-khan.org](https://chakra-khan.org)**
 **SEO & Search Engine Indexing:**
 - Sitemap: [sitemap.xml](https://chakra-khan.org/sitemap.xml)
 - Robots.txt: [robots.txt](https://chakra-khan.org/robots.txt)
+- JSON-LD structured data for homepage, FAQ, privacy policy, and feedback form
 - Submitted to Google Search Console for indexing
 
 ## 🛠️ Technologies
@@ -46,6 +47,7 @@ Visit: **[chakra-khan.org](https://chakra-khan.org)**
 - JavaScript (Interactive elements)
 - Responsive Design
 - XML Sitemap (Google Search Console integration)
+- JSON-LD structured data (Organization, FAQ, Article, ContactPage)
 
 ## 📱 About Frequency Studio App
 
