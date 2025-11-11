@@ -74,7 +74,7 @@ Tibetan Bowls Solfeggio Studio is an Android application featuring:
 1. **Hero Section**: Animated title with rotating Earth phone mockup and meditation image
 2. **Features Grid**: 6 feature cards highlighting app capabilities
 3. **Frequency Showcase**: Sacred frequencies explanation
-4. **Special Features**: "SUMMON" preset and advanced features
+4. **Special Features**: Advanced presets and meditation workflows
 5. **Download CTA**: Official Google Play badge with meditation image
 6. **Support Page**: User feedback collection and contact information
 
