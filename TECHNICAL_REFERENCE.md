@@ -42,7 +42,19 @@ frequency-studio-landing/
 
 ## Change Log
 
-### Version 2.0 - Complete Design Overhaul & New Features (Current)
+### Version 2.1 - Branding Alignment & Analytics Update (Current)
+**Date**: November 2025  
+**Changes**:  
+- ✅ Updated privacy policy page title, hero heading, and legal copy to use the full `Tibetan Bowls Solfeggio Studio` brand name  
+- ✅ Ensured Google Analytics tag fires once on the privacy policy page with explicit `page_title`/`page_path` configuration  
+- ✅ Synced stylesheet header comment to the `Tibetan Bowls Solfeggio Studio` branding
+
+**Technical Implementation**:  
+- HTML: Refreshed privacy policy metadata and content to reflect the new branding  
+- JavaScript: Confirmed GA configuration object includes page-specific details and prevents duplicate inits  
+- CSS: Updated global comment header to match brand rename
+
+### Version 2.0 - Complete Design Overhaul & New Features
 **Date**: January 2025
 **Changes**:
 - ✅ Created comprehensive FAQ page (faq.html) with complete user guide
